@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsChatter</title>
+  <title><%=@title%></title>
+  <link href="style.css" rel="stylesheet" type="text/css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<header>
+		<div id="banner">
+			<a href="/">	
+				<img id="logo" src="/assets/chatter_logo.png">
+			</a>
+		</div>
+	</header>
+	<div id="wrapper">
+		<%= yield %>
+	</div>
+	<footer>
+		&#169; 2015 <span id="blue_bold">Chatter</span> - All rights reserved.
+	</footer>
+	
+	<%= flash[:notice] if flash[:notice] %>
+	<%= flash[:alert] if flash[:alert] %>
 </body>
 </html>

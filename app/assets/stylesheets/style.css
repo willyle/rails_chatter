@@ -1,0 +1,211 @@
+body {
+	font-family: helvetica;
+	background-color: #62514f;
+}
+#wrapper {
+	width: 900px;
+	margin: 0 auto;
+	background-color: #dfe6e9;
+	padding-top: 20px;
+}
+#banner {
+	width: 900px;
+	margin: 0 auto;
+	height: 100px;
+	background-color: #82b4bc;
+}
+#signup, #login, #goodbye {
+	height: 500px;
+	width: 40%;
+	background-color: #f5f0e1;
+	border: 3px solid black;
+	float: left;
+	margin: 0px 40px 40px 40px;
+	box-shadow: 10px 10px 5px #888888;
+}
+#signup h3, #login h3{
+	text-align: center;
+	font-size: 28px;
+}
+#signup h6, #login h6 {
+	text-align: center;
+	font-size: 18px;
+	font-style: italic;
+}
+.message {
+	text-align: center;
+	margin-top: 10px;
+	padding-bottom: 5px;
+}
+
+footer {
+	height: 40px;
+	width: 900px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 14px;
+}
+.clear {
+	clear: both;
+}
+form {
+	text-align: center;
+}
+#logo {
+	padding: 12px 0px 0px 12px;
+}
+#blue_bold {
+	font-weight: bold;
+	color: #82b4bc;
+}
+#byefornow {
+	padding-top: 120px;
+	padding-left: 5px;
+}
+nav {
+	float: right;
+	padding-top: 60px;
+	padding-right: 10px;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+ul {
+	list-style-type: none; 
+	padding-left: 0;
+}
+li {
+	display:inline-block;
+	padding-right: 10px;
+}
+a#navbar:link, a#navbar:visited {
+	color: white;
+	text-decoration: none;
+}
+a#navbar:hover {
+	color: #fd614e;
+	text-decoration: none;
+}
+a#navbar:active {
+}
+.button {
+	background-color: #fd614e;
+	border: #fd614e;
+	font-size: 18px;
+	color: #ffffff;
+	padding: 5px 10px;
+	margin-top: 20px;
+	box-shadow: 2px 2px 2px #888888;
+}
+.button:hover {
+	background-color: #82b4bc;
+}
+#people_chatting {
+	margin-top: 6px;	
+}
+#connect {
+	padding: 0px 20px 10px 20px;
+	font-size: 14px;
+	font-style: italic;
+	text-align: center;
+	color: #ffffff;
+	background-color: #fd614e;
+	opacity: 0.75;
+	padding-top: 10px;
+	margin: 0px 4px 37px 4px;
+}
+.white_bold {
+	font-weight: bold;
+}
+#profile_placeholder {
+	padding: 0px 0px 20px 20px;
+	float: left;
+}
+.profile_info {
+	float: left;
+	padding: 60px 0px 0px 20px;
+}
+.profile_fact {
+
+}
+#following_list {
+	background-color: darkgray;
+	width: 272px;
+	margin: 0 auto;
+	float: left;
+	margin-left: 22px;
+	padding-left: 10px;
+}
+#recent_chatter {
+	background-color: darkgray;
+	width: 534px;
+	margin: 0 auto;
+	float: left;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	padding: 0px 10px 0px 10px;
+}
+.profile_title {
+	float: left;
+	text-transform: uppercase;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: #fd614e;
+	opacity: 0.75;
+	box-shadow: 2px 2px 2px #888888;
+}
+#following_title {
+	margin-left: 20px;
+	padding: 0px 80px;
+}
+#recent_posts_title {
+	margin-left: 20px;
+	padding: 0px 186px;
+}
+#post_form {
+	float: left;
+	margin: 27px 0px 0px 80px;
+}
+#post_label {
+	font-size: 18px;
+	color: #ffffff;
+	background-color: #fd614e;
+	opacity: 0.75;
+}
+#bubbles {
+	float: left;
+	margin-left: 150px;
+}
+.hide{
+	display: none;
+}
+.show{
+	display:block;
+}
+#chatter_feed {
+	border: 5px solid #fd614e;
+	background-color: #ffffff;
+	width: 600px;
+	margin: 0 auto;
+	padding: 0px 10px 0px 10px;
+	box-shadow: 10px 10px 5px #888888;
+	/*margin-bottom: 20px;*/
+}	
+#edit_info {
+	padding: 5px 0px 20px 0px;
+}
+#all_posts {
+	padding: 10px;
+}
+#users_page {
+	border: 5px solid #fd614e;
+	background-color: #ffffff;
+	width: 600px;
+	margin: 0 auto;
+	padding: 0px 10px 10px 10px;
+	box-shadow: 10px 10px 5px #888888;
+}
+#edit {
+	float: left;
+}

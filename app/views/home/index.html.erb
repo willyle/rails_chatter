@@ -1,1 +1,51 @@
-<h1>Welcome to Chatter!</h1>
+<h1 class="message">Welcome to Chatter!</h1>
+
+<div id="signup">
+	<h3>Sign Up</h3>
+	<h6>It's always free and always will be.</h6>
+	<p id="connect">
+		<span class="white_bold">Connect</span> with people from all over the world. 
+		<br>
+		<span class="white_bold">Share</span> what's new with you.
+		<br>
+		<span class="white_bold">Stay updated</span> on what's new with others.</p>
+	<form method="POST" action="/signup">
+		<label for="user_name">Create Username</label>
+		<input type="text" name="user_name">
+		<br>
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+		<label for="email_1">Enter Email</label>
+		<input type="text" name="email_1">
+		<br>
+		&nbsp; &nbsp; &nbsp; 
+		<label for="email_2">Re-enter Email</label>
+		<input type="text" name="email_2">
+		<br>
+		<label for="password_1">Choose Password</label>
+		<input type="password" name="password_1">
+		<br>
+		<label for="password_2">Re-enter Password</label>
+		<input type="password" name="password_2">
+		<br>
+		<input class="button" type="submit" value="Sign Up">
+		<br>
+	</form>
+</div>
+
+<div id="login">
+	<h3>Log In</h3>
+	<h6>Welcome back!</h6>
+	<%= form_tag("/session/create", method: "post") do %>
+	<%=label_tag(:username, "Username") %>
+	<br>
+	<%=text_field_tag(:username) %>
+	<br><br>
+	<%=label_tag(:password, "Password") %>
+	<br>
+	<%=password_field_tag(:password) %>
+	<br><br>
+	<%=submit_tag("Submit") %>
+	<% end %>
+</div>
+
+<div class="clear"></div>
