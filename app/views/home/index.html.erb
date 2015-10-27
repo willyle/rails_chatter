@@ -9,42 +9,37 @@
 		<span class="white_bold">Share</span> what's new with you.
 		<br>
 		<span class="white_bold">Stay updated</span> on what's new with others.</p>
-	<form method="POST" action="/signup">
-		<label for="user_name">Create Username</label>
-		<input type="text" name="user_name">
-		<br>
-		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-		<label for="email_1">Enter Email</label>
-		<input type="text" name="email_1">
-		<br>
-		&nbsp; &nbsp; &nbsp; 
-		<label for="email_2">Re-enter Email</label>
-		<input type="text" name="email_2">
-		<br>
-		<label for="password_1">Choose Password</label>
-		<input type="password" name="password_1">
-		<br>
-		<label for="password_2">Re-enter Password</label>
-		<input type="password" name="password_2">
-		<br>
-		<input class="button" type="submit" value="Sign Up">
-		<br>
-	</form>
+
+	<%= form_tag(users_path(User.new), method: "post") do %>
+		<%= label_tag(:username, "Create username ") %>
+		<%= text_field_tag(:username) %>
+		<br><br>
+		<%= label_tag(:email, "Enter email ") %>
+		<%= text_field_tag(:email) %>
+		<br><br>
+		<%= label_tag(:password, "Enter password ") %>
+		<%= password_field_tag(:password) %>
+		<br><br>
+		<%= label_tag(:password2, "Re-enter password ") %>
+		<%= password_field_tag(:password2) %>
+		<br><br>
+		<%=submit_tag("Submit") %>
+	<% end %>
 </div>
 
 <div id="login">
 	<h3>Log In</h3>
 	<h6>Welcome back!</h6>
 	<%= form_tag("session/create", method: "post") do %>
-	<%=label_tag(:username, "Username") %>
-	<br>
-	<%=text_field_tag(:username) %>
-	<br><br>
-	<%=label_tag(:password, "Password") %>
-	<br>
-	<%=password_field_tag(:password) %>
-	<br><br>
-	<%=submit_tag("Submit") %>
+		<%=label_tag(:username, "Username") %>
+		<br>
+		<%=text_field_tag(:username) %>
+		<br><br>
+		<%=label_tag(:password, "Password") %>
+		<br>
+		<%=password_field_tag(:password) %>
+		<br><br>
+		<%=submit_tag("Submit") %>
 	<% end %>
 </div>
 

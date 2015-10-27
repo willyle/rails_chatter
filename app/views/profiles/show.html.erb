@@ -1,8 +1,10 @@
 <img id="profile_placeholder" src="/assets/profile_placeholder.jpg">
 	<div class="profile_info">
-		<div id="edit">
-			<%= link_to "Edit Profile", edit_profile_path(@profile) %>
-		</div>
+		<% if session[:user_id] == @user.id %>
+			<div id="edit">
+				<%= link_to "Edit Profile", edit_profile_path(@profile) %>
+			</div>
+		<% end %>
 
 		<div class="clear"></div>
 

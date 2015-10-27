@@ -1,0 +1,24 @@
+<%= form_for (@profile) do |f| %>
+	<div class="field">
+		<%= f.label "First Name" %><br>
+    	<%= f.text_field :fname %>
+    	<br><br>
+    	<%= f.label "Last Name" %><br>
+    	<%= f.text_field :lname %>
+    	<br><br>
+    	<%= f.label :email %><br>
+    	<%= f.text_field :email %>
+    	<br><br>
+    	<%= f.label :gender %><br>
+    	<%= f.text_field :gender %>
+    	<br><br>
+    	<%= f.label :work %><br>
+    	<%= f.text_field :work %>
+    	<br><br>
+    	<%= f.label :birthday %><br>
+    	<%= f.text_field :birthday %><br><br>
+  	</div>
+  	<div class="actions">
+    	<%= f.submit %>
+  	</div>
+<% end %>
