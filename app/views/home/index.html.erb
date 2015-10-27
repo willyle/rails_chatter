@@ -35,7 +35,7 @@
 <div id="login">
 	<h3>Log In</h3>
 	<h6>Welcome back!</h6>
-	<%= form_tag("/session/create", method: "post") do %>
+	<%= form_tag("session/create", method: "post") do %>
 	<%=label_tag(:username, "Username") %>
 	<br>
 	<%=text_field_tag(:username) %>

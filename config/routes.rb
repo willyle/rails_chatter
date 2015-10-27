@@ -5,12 +5,8 @@ Rails.application.routes.draw do
 
   post 'session/create'
 
-
-
-  resources :users do
-    resources :posts
-  end
-
+  resources :users
+  resources :posts
   resources :profiles
   resources :comments
   resources :session

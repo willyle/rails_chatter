@@ -1,3 +1,6 @@
+/**{
+	border: solid 2px red;
+}*/
 body {
 	font-family: helvetica;
 	background-color: #62514f;
@@ -132,6 +135,7 @@ a#navbar:active {
 #following_list {
 	background-color: darkgray;
 	width: 272px;
+	min-height: 100px;
 	margin: 0 auto;
 	float: left;
 	margin-left: 22px;
@@ -139,12 +143,12 @@ a#navbar:active {
 }
 #recent_chatter {
 	background-color: darkgray;
-	width: 534px;
+	width: 553px;
+	min-height: 100px;
 	margin: 0 auto;
 	float: left;
 	margin-left: 20px;
 	margin-bottom: 20px;
-	padding: 0px 10px 0px 10px;
 }
 .profile_title {
 	float: left;
@@ -173,10 +177,10 @@ a#navbar:active {
 	background-color: #fd614e;
 	opacity: 0.75;
 }
-#bubbles {
+/*#bubbles {
 	float: left;
 	margin-left: 150px;
-}
+}*/
 .hide{
 	display: none;
 }
@@ -208,4 +212,24 @@ a#navbar:active {
 }
 #edit {
 	float: left;
+}
+#sign_out_link {
+	padding: 10px;
+	float: right;
+}
+
+#post_message {
+	width: 200px;
+	height: 100px;
+}
+
+#new_post, #make_post {
+	padding-right: 100px;
+	float: right;
+}
+
+.posting {
+	background-color: #ffffff;
+	margin: 10px;
+	padding: 10px;
 }

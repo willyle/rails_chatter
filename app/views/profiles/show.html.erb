@@ -14,19 +14,43 @@
 		<p class="profile_fact">Gender: <%= @profile.gender%></p>
 		<p class="profile_fact">Work: <%= @profile.work %></p>
 		<p class="profile_fact">Birthday: <%= @profile.birthday %></p>
-
 	</div>
 
-	<div id="new_post">
+	<div id="make_post">
 		<img id="bubbles" src="/assets/chatting_bubbles.png" width="150px">
-		<%= form_tag("/users/#{:id}/posts/create", method: "post") do %>
-		<%=label_tag(:message, "What's new with you?") %>
-		<br>
-		<%=text_area_tag(:message) %>
-		<% hidden_field_tag(:user_id, session[:user_id]) %>
-		<br><br>
-		<%=submit_tag("Submit") %>
+		<p>What's new with you?</p>
+	</div>
+
+	<%= form_for(Post.new) do |f| %>
+  		<div class="field">
+    		<%= f.text_area :message %>
+  		</div>
+  		<div class="actions">
+    		<%= f.submit %>
+  		</div>
+  	<% end %>
+	
+
+	<div class="clear"></div>
+
+	<div id="profile_section_titles">
+		<h2 class="profile_title" id="following_title">Following</h2>
+		<h2 class="profile_title" id="recent_posts_title">Recent Chatter</h2>
+	</div>
+
+	<div class="clear"></div>
+
+	<div id="following_list">
+	</div>
+
+	<div id="recent_chatter">
+		<% @posts.each do |post| %>
+			<div class="posting">
+			<%= post.message %>
+			<br><br>
+			<%= post.created_at.strftime("Posted: %m-%d-%Y %I:%M:%S") %>
+			</div>
 		<% end %>
 	</div>
-	
+
 	<div class="clear"></div>
