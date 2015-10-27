@@ -1,0 +1,32 @@
+<img id="profile_placeholder" src="/assets/profile_placeholder.jpg">
+	<div class="profile_info">
+		<div id="edit">
+			<%= link_to "Edit Profile", edit_profile_path(@profile) %>
+		</div>
+
+		<div class="clear"></div>
+
+		<h1 class="profile_name">
+			<%= fullname %>
+		</h1>
+		
+		<p class="profile_fact">Email: <%= @profile.email%></p>
+		<p class="profile_fact">Gender: <%= @profile.gender%></p>
+		<p class="profile_fact">Work: <%= @profile.work %></p>
+		<p class="profile_fact">Birthday: <%= @profile.birthday %></p>
+
+	</div>
+
+	<div id="new_post">
+		<img id="bubbles" src="/assets/chatting_bubbles.png" width="150px">
+		<%= form_tag("/users/#{:id}/posts/create", method: "post") do %>
+		<%=label_tag(:message, "What's new with you?") %>
+		<br>
+		<%=text_area_tag(:message) %>
+		<% hidden_field_tag(:user_id, session[:user_id]) %>
+		<br><br>
+		<%=submit_tag("Submit") %>
+		<% end %>
+	</div>
+	
+	<div class="clear"></div>

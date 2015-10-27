@@ -5,12 +5,15 @@ Rails.application.routes.draw do
 
   post 'session/create'
 
+
+
   resources :users do
     resources :posts
   end
 
   resources :profiles
   resources :comments
+  resources :session
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

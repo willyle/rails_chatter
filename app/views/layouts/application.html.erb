@@ -13,6 +13,9 @@
 			<a href="/">	
 				<img id="logo" src="/assets/chatter_logo.png">
 			</a>
+			<% if session[:user_id] %>
+				<%= link_to "Sign Out", session_path, method: :delete %>
+			<% end %>
 		</div>
 	</header>
 	<div id="wrapper">
