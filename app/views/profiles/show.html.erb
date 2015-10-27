@@ -13,7 +13,11 @@
 		<p class="profile_fact">Email: <%= @profile.email%></p>
 		<p class="profile_fact">Gender: <%= @profile.gender%></p>
 		<p class="profile_fact">Work: <%= @profile.work %></p>
-		<p class="profile_fact">Birthday: <%= @profile.birthday %></p>
+		<p class="profile_fact">Birthday:
+			<% if @profile.birthday.present? %> 
+				<%= @profile.birthday.strftime('%B %d') %>
+			<% end %>
+		</p>
 	</div>
 
 	<div id="make_post">
@@ -41,14 +45,21 @@
 	<div class="clear"></div>
 
 	<div id="following_list">
+		<% @followees = @user.users %>
+		<% @followees.each do |followee| %>
+			<%= link_to followee.username, profile_path(followee.id) %>
+		<% end %>
 	</div>
 
 	<div id="recent_chatter">
 		<% @posts.each do |post| %>
 			<div class="posting">
-			<%= post.message %>
-			<br><br>
-			<%= post.created_at.strftime("Posted: %m-%d-%Y %I:%M:%S") %>
+				<p>
+					<%= post.message %>
+				</p>
+				<p>
+					<%= post.created_at.strftime("Posted: %m-%d-%Y %I:%M:%S %p") %>
+				</p>
 			</div>
 		<% end %>
 	</div>
