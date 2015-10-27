@@ -3,13 +3,14 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  post 'session/create'
-
   resources :users
   resources :posts
   resources :profiles
   resources :comments
-  resources :session
+
+  post 'session/create'
+  delete 'session/destroy'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

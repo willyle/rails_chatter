@@ -213,7 +213,7 @@ a#navbar:active {
 #edit {
 	float: left;
 }
-#sign_out_link {
+#nav_links {
 	padding: 10px;
 	float: right;
 }

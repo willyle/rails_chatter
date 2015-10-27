@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+	def index
+		@users = User.all
+	end
+	def show
+		@profile = Profile.find_by(user_id: params[:id])
+		redirect_to profile_path(@profile.id)
+	end
 	def create
 		if params[:password] != params[:password2]
 			flash[:alert] = "Enter the same password twice."
