@@ -1,18 +1,26 @@
 class ProfilesController < ApplicationController
 	def show
 		@profile = Profile.find(params[:id])
-		@posts = Post.where(user_id: session[:user_id]).order(created_at: :DESC)
-		@user = User.find(params[:id])
-		@profile_followees = @user.users
+		@posts = @profile.user.posts.order(created_at: :DESC)
+		@profile_followees = User.find(@profile.user.id).users
 		@my_followees = User.find(session[:user_id]).users
+
+		@comments = []
+		@posts.each do |post|
+			@comments += post.comments
+		end
 	end
+
 	def new
 	end
+
 	def create
 	end
+
 	def edit
 		@profile = Profile.find(session[:user_id])
 	end
+
 	def update
 		@profile = Profile.find(session[:user_id])
 		if @profile.update(profile_params)
@@ -23,8 +31,10 @@ class ProfilesController < ApplicationController
 
 		redirect_to root_path
 	end
+
 	def destroy
 	end
+
 	private
 		def profile_params
 			params.require(:profile).permit(:fname, :lname, :email, :gender, :work, :birthday)

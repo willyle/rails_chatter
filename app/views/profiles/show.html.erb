@@ -1,13 +1,13 @@
 <img id="profile_placeholder" src="/assets/profile_placeholder.jpg">
 	<div class="profile_info">
 		<% following = false %>
-		<% if session[:user_id] == @user.id %>
+		<% if session[:user_id] == @profile.user.id %>
 			<div id="edit">
 				<%= link_to "Edit Profile", edit_profile_path(@profile) %>
 			</div>
 		<% else %>
 			<% @my_followees.each do |followee| %>
-				<% if followee.id == @user.id %>
+				<% if followee.id == @profile.user.id %>
 					<% following = true %>
 
 					<div id="edit">
@@ -39,19 +39,21 @@
 		</p>
 	</div>
 
-	<div id="make_post">
-		<img id="bubbles" src="/assets/chatting_bubbles.png" width="150px">
-		<p>What's new with you?</p>
-	</div>
+	<% if session[:user_id] == @profile.user.id %>
+		<div id="make_post">
+			<img id="bubbles" src="/assets/chatting_bubbles.png" width="150px">
+			<p>What's new with you?</p>
+		</div>
 
-	<%= form_for(Post.new) do |f| %>
-  		<div class="field">
-    		<%= f.text_area :message %>
-  		</div>
-  		<div class="actions">
-    		<%= f.submit %>
-  		</div>
-  	<% end %>
+		<%= form_for(Post.new) do |f| %>
+	  		<div class="field">
+	    		<%= f.text_area :message %>
+	  		</div>
+	  		<div class="actions">
+	    		<%= f.submit %>
+	  		</div>
+	  	<% end %>
+	  <% end %>
 	
 
 	<div class="clear"></div>
@@ -80,6 +82,19 @@
 					<%= post.created_at.strftime("Posted: %m-%d-%Y %I:%M:%S %p") %>
 				</p>
 			</div>
+
+			<% @comments.each do |comment| %>
+				<% if comment.post_id == post.id %>
+					<div class="comment">
+						<p>
+							<%= comment.message %>
+						</p>
+						<p>
+							<%= comment.created_at.strftime("Posted: %m-%d-%Y %I:%M:%S %p") %>
+						</p>
+					</div>
+				<% end %>
+			<% end %>
 		<% end %>
 	</div>
 

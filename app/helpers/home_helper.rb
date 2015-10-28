@@ -1,7 +1,7 @@
 module HomeHelper
 	def fullname
 		if @profile.fname.nil? || @profile.fname == ""
-			@user.username
+			@profile.user.username
 		elsif @profile.lname.nil? || @profile.lname == ""
 			@profile.fname
 		else

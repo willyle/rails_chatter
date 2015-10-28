@@ -232,3 +232,8 @@ a#navbar:active {
 	background-color: #ffffff;
 	margin: 10px;
 }
+
+.comment {
+	background-color: red;
+	margin: 0 10px 5px 20px;
+}
