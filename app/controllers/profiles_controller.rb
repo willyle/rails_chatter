@@ -3,6 +3,8 @@ class ProfilesController < ApplicationController
 		@profile = Profile.find(params[:id])
 		@posts = Post.where(user_id: session[:user_id]).order(created_at: :DESC)
 		@user = User.find(params[:id])
+		@profile_followees = @user.users
+		@my_followees = User.find(session[:user_id]).users
 	end
 	def new
 	end

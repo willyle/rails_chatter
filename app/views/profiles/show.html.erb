@@ -1,11 +1,28 @@
 <img id="profile_placeholder" src="/assets/profile_placeholder.jpg">
 	<div class="profile_info">
+		<% following = false %>
 		<% if session[:user_id] == @user.id %>
 			<div id="edit">
 				<%= link_to "Edit Profile", edit_profile_path(@profile) %>
 			</div>
-		<% end %>
+		<% else %>
+			<% @my_followees.each do |followee| %>
+				<% if followee.id == @user.id %>
+					<% following = true %>
 
+					<div id="edit">
+						<%= link_to "Unfollow", {:controller => "follows", :action => "destroy", :id => params[:id] }, method: "post" %>
+					</div>
+				<% end %>
+			<% end %>
+
+			<% if following == false %>
+				<div id="edit">
+					<%= link_to "Follow", {:controller => "follows", :action => "create", :id => params[:id] }, method: "post" %>
+				</div>
+			<% end %>
+		<% end %>
+		
 		<div class="clear"></div>
 
 		<h1 class="profile_name">
@@ -47,9 +64,9 @@
 	<div class="clear"></div>
 
 	<div id="following_list">
-		<% @followees = @user.users %>
-		<% @followees.each do |followee| %>
+		<% @profile_followees.each do |followee| %>
 			<%= link_to followee.username, profile_path(followee.id) %>
+			<br><br>
 		<% end %>
 	</div>
 
